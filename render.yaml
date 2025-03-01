@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: durak
+    env: docker
+    dockerfilePath: build/Dockerfile
+    envVars:
+      - key: VIRTUAL_PORT
+        value: "8007"
+      - key: VIRTUAL_HOST
+        value: "durak.getid.org"
+      - key: LETSENCRYPT_HOST
+        value: "durak.getid.org"
+    disk:
+      - name: durak-logs
+        mountPath: /var/log/durak
